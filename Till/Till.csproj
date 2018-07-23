@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{84086188-28F3-4EBC-AD57-2C8CDBD8831C}</ProjectGuid>
+    <ProjectTypeGuids>{349C5851-65DF-11DA-9384-00065B846F21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Till</RootNamespace>
+    <AssemblyName>Till</AssemblyName>
+    <TargetFrameworkVersion>v4.7</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin</OutputPath>
+    <DefineConstants>DEBUG;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <Optimize>true</Optimize>
+    <OutputPath>bin</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Web.Services" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+    <Content Include="Default.aspx" />
+    <Content Include="Scripts\jquery-1.9.1.min.js" />
+    <Content Include="Scripts\jquery-1.9.1.js" />
+    <Content Include="Scripts\jquery-1.9.1-vsdoc.js" />
+    <Content Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-theme.css" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\BentoEnum.cs" />
+    <Compile Include="Data\BentoPrice.cs" />
+    <Compile Include="Data\SushiEnum.cs" />
+    <Compile Include="Data\SushiPrice.cs" />
+    <Compile Include="Data\DrinkEnum.cs" />
+    <Compile Include="Data\DrinkPrice.cs" />
+    <Compile Include="Data\ServiceEnum.cs" />
+    <Compile Include="Data\ServiceCharge.cs" />
+    <Compile Include="InvoiceInterface\IBentoInvoice.cs" />
+    <Compile Include="Data\Item.cs" />
+    <Compile Include="InvoiceInterface\IInvoice.cs" />
+    <Compile Include="InvoiceFactory\BentoInvoiceFactory.cs" />
+    <Compile Include="BentoTypeInvoice\BentoInvoice.cs" />
+    <Compile Include="BentoTypeInvoice\ChickenTeriyakiInvoice.cs" />
+    <Compile Include="Utility\UtilityService.cs" />
+    <Compile Include="BentoTypeInvoice\ChickenCurryInvoice.cs" />
+    <Compile Include="BentoTypeInvoice\CurrySauceInvoice.cs" />
+    <Compile Include="BentoTypeInvoice\PorkBulagiInvoice.cs" />
+    <Compile Include="BentoTypeInvoice\SpicyChickenInvoice.cs" />
+    <Compile Include="ServiceInterface\IService.cs" />
+    <Compile Include="FoodService\EatIn.cs" />
+    <Compile Include="FoodService\Takeaway.cs" />
+    <Compile Include="FoodService\Service.cs" />
+    <Compile Include="WebControl\UICustom.cs" />
+    <Compile Include="MainInvoice\Invoice.cs" />
+    <Compile Include="InvoiceFactory\InvoiceIndustry.cs" />
+    <Compile Include="FoodService\ServiceFactory.cs" />
+    <Compile Include="SushiTypeInvoice\SushiInvoice.cs" />
+    <Compile Include="SushiTypeInvoice\HarmonySetInvoice.cs" />
+    <Compile Include="InvoiceInterface\IShushiInvoice.cs" />
+    <Compile Include="InvoiceFactory\SushiInvoiceFactory.cs" />
+    <Compile Include="SushiTypeInvoice\RainBowSetInvoice.cs" />
+    <Compile Include="SushiTypeInvoice\ChumakiSetInvoice.cs" />
+    <Compile Include="SushiTypeInvoice\MixedMakiSetInvoice.cs" />
+    <Compile Include="InvoiceInterface\IDrinkInvoice.cs" />
+    <Compile Include="DrinkTypeInvoice\DrinkInvoice.cs" />
+    <Compile Include="DrinkTypeInvoice\CokeInvoice.cs" />
+    <Compile Include="DrinkTypeInvoice\ZeroCokeInvoice.cs" />
+    <Compile Include="DrinkTypeInvoice\FantaInvoice.cs" />
+    <Compile Include="DrinkTypeInvoice\StillWaterInvoice.cs" />
+    <Compile Include="InvoiceFactory\DrinkInvoiceFactory.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Data\" />
+    <Folder Include="InvoiceFactory\" />
+    <Folder Include="InvoiceInterface\" />
+    <Folder Include="BentoTypeInvoice\" />
+    <Folder Include="Utility\" />
+    <Folder Include="ServiceInterface\" />
+    <Folder Include="FoodService\" />
+    <Folder Include="WebControl\" />
+    <Folder Include="MainInvoice\" />
+    <Folder Include="SushiTypeInvoice\" />
+    <Folder Include="DrinkTypeInvoice\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Scripts\jquery-1.9.1.min.map" />
+    <None Include="fonts\glyphicons-halflings-regular.woff2" />
+    <None Include="Content\bootstrap.min.css.map" />
+    <None Include="Content\bootstrap.css.map" />
+    <None Include="Content\bootstrap-theme.min.css.map" />
+    <None Include="Content\bootstrap-theme.css.map" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <ProjectExtensions>
+    <MonoDevelop>
+      <Properties>
+        <XspParameters Port="8080" Address="127.0.0.1" SslMode="None" SslProtocol="Default" KeyType="None" CertFile="" KeyFile="" PasswordOptions="None" Password="" Verbose="True" />
+      </Properties>
+    </MonoDevelop>
+  </ProjectExtensions>
+</Project>

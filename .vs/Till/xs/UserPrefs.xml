@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{84086188-28F3-4EBC-AD57-2C8CDBD8831C}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Till/BentoTypeInvoice/ChickenTeriyakiInvoice.cs">
+    <Files>
+      <File FileName="Till/Web.config" Line="16" Column="56" />
+      <File FileName="Till/MainInvoice/Invoice.cs" Line="16" Column="1" />
+      <File FileName="Till/Default.aspx.cs" Line="110" Column="135" />
+      <File FileName="Till/BentoTypeInvoice/ChickenCurryInvoice.cs" Line="47" Column="16" />
+      <File FileName="Till/BentoTypeInvoice/ChickenTeriyakiInvoice.cs" Line="43" Column="13" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Till PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>
