@@ -11,7 +11,7 @@ namespace Till.InvoiceFactory
         {
         }
 
-        //method to create hotfood typed invoice like chickenteriyaki,
+        //method to create drink typed invoice like Coke,
         public IDrinkInvoice createDrinkInvoiceType(string itemName)
         {
             IDrinkInvoice drinkType;
