@@ -11,7 +11,7 @@ namespace Till.InvoiceFactory
         {
         }
 
-        //method to create hotfood typed invoice like chickenteriyaki,
+        //method to create sushi typed invoice like HarmonySet,
         public IShushiInvoice createSushuInvoiceType(string itemName)
         {
             IShushiInvoice sushiType;
