@@ -7,6 +7,6 @@ namespace Till.Data
         CurrySauce,
         SpicyChicken,
         ChickenTeriyaki,
-        PorkBulagi
+        PorkBulgogi
     }
 }
