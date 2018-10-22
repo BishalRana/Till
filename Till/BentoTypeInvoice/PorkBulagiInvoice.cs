@@ -15,37 +15,37 @@ namespace Till.BentoTypeInvoice
 
         public void AddFoods(List<Item> items)
         {
-            if (!UtilityService.CheckItemExists(items, BentoEnum.PorkBulagi.ToString()))
+            if (!UtilityService.CheckItemExists(items, BentoEnum.PorkBulgogi.ToString()))
             {
                 items.Add(new Item
                 {
-                    itemName = BentoEnum.PorkBulagi.ToString(),
-                    price = BentoPrice.PorkBulagi,
+                    itemName = BentoEnum.PorkBulgogi.ToString(),
+                    price = BentoPrice.PorkBulgogi,
                     qty = 1,
-                    totalCost = BentoPrice.PorkBulagi
+                    totalCost = BentoPrice.PorkBulgogi
                 });
             }
             else
             {
-                Item porkBulagi = items.First(s => s.itemName == BentoEnum.PorkBulagi.ToString());
-                porkBulagi.qty = porkBulagi.qty + 1;
-                porkBulagi.totalCost = porkBulagi.price * porkBulagi.qty;
+                Item porkBulgogi = items.First(s => s.itemName == BentoEnum.PorkBulgogi.ToString());
+                porkBulgogi.qty = porkBulgogi.qty + 1;
+                porkBulgogi.totalCost = porkBulgogi.price * porkBulgogi.qty;
 
             }
         }
 
         public void RemoveFood(List<Item> items)
         {
-            Item porkBulagi = items.First(s => s.itemName == BentoEnum.PorkBulagi.ToString());
+            Item porkBulgogi = items.First(s => s.itemName == BentoEnum.PorkBulgogi.ToString());
 
-            if (porkBulagi.qty == 1)
+            if (porkBulgogi.qty == 1)
             {
-                items.Remove(porkBulagi);
+                items.Remove(porkBulgogi);
             }
-            else if (porkBulagi.qty > 1)
+            else if (porkBulgogi.qty > 1)
             {
-                porkBulagi.qty = porkBulagi.qty - 1;
-                porkBulagi.totalCost = porkBulagi.totalCost - porkBulagi.price;
+                porkBulgogi.qty = porkBulgogi.qty - 1;
+                porkBulgogi.totalCost = porkBulgogi.totalCost - porkBulgogi.price;
             }
         }
     }
