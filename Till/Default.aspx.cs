@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Linq;
 using System.Web;
+using System.Web.Services;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Till.Data;
@@ -30,54 +31,59 @@ namespace Till
         {
             if (!Page.IsPostBack)
             {
-                if (Session["bentoList"] == null)
-                {
-                    List<string> bentos = new List<string>()
+                PageLoadAttributeInitialization();
+            }
+        }
+
+        protected void PageLoadAttributeInitialization()
+        {
+            if (Session["bentoList"] == null)
+            {
+                List<string> bentos = new List<string>()
                      {
                         BentoEnum.ChickenCurry.ToString(),
                         BentoEnum.ChickenTeriyaki.ToString(),
                         BentoEnum.CurrySauce.ToString(),
-                        BentoEnum.PorkBulagi.ToString(),
-                        BentoEnum.SpicyChicken.ToString()
+                        BentoEnum.PorkBulgogi.ToString()
                      };
-                    Session["bentoList"] = bentos;
-                }
+                Session["bentoList"] = bentos;
+            }
 
 
-                BentoList.DataSource = from i in (List<string>)Session["bentoList"]
-                                       select new ListItem()
-                                       {
-                                           Text = i,
-                                           Value = i
-                                       };
-                BentoList.DataBind();
+            BentoList.DataSource = from i in (List<string>)Session["bentoList"]
+                                   select new ListItem()
+                                   {
+                                       Text = i,
+                                       Value = i
+                                   };
+            BentoList.DataBind();
 
-                if (Session["sushiList"] == null)
-                {
-                    List<string> sushis = new List<string>()
+            if (Session["sushiList"] == null)
+            {
+                List<string> sushis = new List<string>()
                          {
                             SushiEnum.ChumakiSet.ToString(),
                             SushiEnum.HarmonySet.ToString(),
                             SushiEnum.MixedMakiSet.ToString(),
                             SushiEnum.RainBowSet.ToString()
                          };
-                    Session["sushiList"] = sushis;
-                }
+                Session["sushiList"] = sushis;
+            }
 
 
-                SushiList.DataSource = from i in (List<string>)Session["sushiList"]
-                                       select new ListItem()
-                                       {
-                                           Text = i,
-                                           Value = i
-                                       };
-                SushiList.DataBind();
+            SushiList.DataSource = from i in (List<string>)Session["sushiList"]
+                                   select new ListItem()
+                                   {
+                                       Text = i,
+                                       Value = i
+                                   };
+            SushiList.DataBind();
 
 
 
-                if (Session["drinkList"] == null)
-                {
-                    List<string> drinks = new List<string>()
+            if (Session["drinkList"] == null)
+            {
+                List<string> drinks = new List<string>()
                     {
                         DrinkEnum.Coke.ToString(),
                         DrinkEnum.ZeroCoke.ToString(),
@@ -85,71 +91,58 @@ namespace Till
                         DrinkEnum.Fanta.ToString()
                     };
 
-                    Session["drinkList"] = drinks;
-                }
-
-                if (Session["drinkList"] != null)
-                {
-                    DrinkList.DataSource = from i in (List<string>)Session["drinkList"]
-                                           select new ListItem()
-                                           {
-                                               Text = i,
-                                               Value = i
-                                           };
-                    DrinkList.DataBind();
-                }
-
-
-                if (Session["pageIndex"] != null && !string.IsNullOrEmpty(Session["pageIndex"].ToString()))
-                {
-                    purchasedFoodView.PageIndex = (int)Session["pageIndex"];
-                }
-
-                if (Session["selectedItem"] != null && !string.IsNullOrEmpty(Session["selectedItem"].ToString()))
-                {
-                    DrinkList.SelectedIndex = DrinkList.Items.IndexOf(DrinkList.Items.FindByText(Session["selectedItem"].ToString()));
-                }
-
-                if (Session["items"] == null)
-                {
-                    Debug.WriteLine("Session is null");
-                    Session["items"] = new List<Item>();
-                }
-
-                if (Session["serviceType"] == null)
-                {
-                    ServiceType.Text = ServiceEnum.EATIN.ToString();
-                    serviceName = ServiceEnum.EATIN.ToString();
-                }
-                else
-                {
-                    ServiceType.Text = Session["serviceType"].ToString();
-                }
-
-                ttlCost.Text = "£" + Invoice.CalculateTotalCost((List<Item>)Session["items"]).ToString();
-                purchasedFoodView.DataSource = (List<Item>)Session["items"];
-                purchasedFoodView.DataBind();
-
+                Session["drinkList"] = drinks;
             }
-        }
 
-
-        //this method get called on page render
-        protected override void Render(HtmlTextWriter writer)
-        {
-            foreach (GridViewRow r in purchasedFoodView.Rows)
+            if (Session["drinkList"] != null)
             {
-                if (r.RowType == DataControlRowType.DataRow)
-                {
-                    r.Attributes["onmouseover"] = "this.style.cursor='pointer';";
-                    r.ToolTip = "Click to reduce product quantity";
-                    r.Attributes["onclick"] = this.Page.ClientScript.GetPostBackClientHyperlink(purchasedFoodView, "Select$" + r.RowIndex, true);
-                }
+                DrinkList.DataSource = from i in (List<string>)Session["drinkList"]
+                                       select new ListItem()
+                                       {
+                                           Text = i,
+                                           Value = i
+                                       };
+                DrinkList.DataBind();
             }
 
-            base.Render(writer);
-        }
 
+            if (Session["pageIndex"] != null && !string.IsNullOrEmpty(Session["pageIndex"].ToString()))
+            {
+                purchasedFoodView.PageIndex = (int)Session["pageIndex"];
+            }
+
+            if (Session["selectedItem"] != null && !string.IsNullOrEmpty(Session["selectedItem"].ToString()))
+            {
+                DrinkList.SelectedIndex = DrinkList.Items.IndexOf(DrinkList.Items.FindByText(Session["selectedItem"].ToString()));
+            }
+
+            if (Session["items"] == null)
+            {
+                Debug.WriteLine("Session is null");
+                List<Item> listItems = new List<Item>();
+                Session["items"] = listItems;
+            }
+
+            if (Session["serviceType"] == null)
+            {
+                ServiceType.Text = ServiceEnum.EATIN.ToString();
+                serviceName = ServiceEnum.EATIN.ToString();
+                serviceImg.Src = "/images/eatin.jpg";
+            }
+            else
+            {
+                ServiceType.Text = Session["serviceType"].ToString();
+                serviceImg.Src = Session["serviceImage"].ToString();
+            }
+
+            ttlCost.Text = "£" + Invoice.CalculateTotalCost((List<Item>)Session["items"]).ToString();
+            Session["totalCost"] = ttlCost.Text;
+            Session["serviceType"] = ServiceType.Text;
+            Session["serviceImage"] = serviceImg.Src;
+            purchasedFoodView.DataSource = (List<Item>)Session["items"];
+            purchasedFoodView.DataBind();
+
+        }
 
         //this method gets called during pagination
         protected void invoice_PageIndexChanging(object sender, GridViewPageEventArgs e)
@@ -158,41 +151,97 @@ namespace Till
             Response.Redirect("Default.aspx");
         }
 
-        //this method gets called when the row is selected, retrieving the cell 0 value
-        protected void invoice_SelectedIndexChanged(Object sender, EventArgs e)
+
+        //this method gets called on clicking add item or remove item button in a row
+        protected void GridView1_RowCommand(object sender,GridViewCommandEventArgs e)
         {
-            string itemName = purchasedFoodView.SelectedRow.Cells[0].Text;
-            Invoice invoice = new Invoice(new InvoiceIndustry().createInvoiceType(itemName));
-            invoice.DeductInItem(Get_Service(),(List<Item>)Session["items"], itemName);
-            invoice.RemoveFood((List<Item>)Session["items"]);           
-            Custom_GridView(itemName);
+
+            try
+            {
+                // Retrieve the row index stored in the 
+                // CommandArgument property
+                int index = Convert.ToInt32(e.CommandArgument);
+                Console.WriteLine("Index " + index);
+                GridViewRow row = purchasedFoodView.Rows[index];
+
+                if (e.CommandName == "RemoveItem")
+                {
+
+                    // Retrieve the row that contains the button 
+                    // from the Rows collection.
+                    string itemName = row.Cells[0].Text;
+
+                    Invoice invoice = new Invoice(new InvoiceIndustry().createInvoiceType(itemName));
+                    invoice.DeductInItem(Get_Service(), (List<Item>)Session["items"], itemName);
+                    invoice.RemoveFood((List<Item>)Session["items"]);
+                    Custom_GridView(itemName);
+                }
+
+                if (e.CommandName == "AddItem")
+                {
+
+                    string itemName = row.Cells[0].Text;
+                    Bill(itemName);
+                }
+
+                if (e.CommandName == "ItemInfo")
+                {
+                    string itemName = row.Cells[0].Text;
+                    Server.Transfer("/Info.aspx?itemName=" + itemName);
+                }
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Message "+ex.Message);
+            }
         }
+
 
         public void Checkout_Click(object sender, EventArgs e)
         {
-            Session["items"] = null;
-            Session["selectedItem"] = null;
-            Session["pageIndex"] = null;
-            Session["serviceType"] = null;
-            Response.Redirect("Default.aspx");
+            Server.Transfer("/Bill.aspx");
         }
 
         //this method gets called on clicking add bento button
         protected void Bento_Click(object sender, EventArgs e)
-        {
-            Bill(BentoList.SelectedValue);
+        {  try
+            {
+                Bill(BentoList.SelectedValue);
+            }
+            catch(Exception )
+            {
+                PageLoadAttributeInitialization();
+            }
         }
 
         //this methid gets called on clicking add sushi button
         protected void Sushi_Click(object sender, EventArgs e)
         {
-            Bill(SushiList.SelectedValue);
+            try
+            {
+                Bill(SushiList.SelectedValue);
+
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("Message "+ex.Message);
+                PageLoadAttributeInitialization();
+            }
         }
 
         //this method gets called on clicking add drink button
         protected void Drink_Click(object sender, EventArgs e)
         {
-            Bill(DrinkList.SelectedValue);
+            try
+            {
+                Bill(DrinkList.SelectedValue);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Message "+ex.Message);
+                PageLoadAttributeInitialization();
+            }
         }
 
         //this method gets called to add items in the invoice
@@ -218,6 +267,7 @@ namespace Till
         {
             ServiceType.Text = "EAT IN";
             Session["serviceType"] = ServiceEnum.EATIN.ToString();
+            Session["serviceImage"] = "/images/eatin.jpg";
             serviceName = ServiceEnum.EATIN.ToString();
             Service_Type();
         }
@@ -226,6 +276,7 @@ namespace Till
         protected void Takeaway_Click(object sender, EventArgs e)
         {
             Session["serviceType"] =  "TAKEWAY";
+            Session["serviceImage"] = "/images/takeway.jpg";
             serviceName = ServiceEnum.TAKEWAY.ToString();
             Service_Type();
         }

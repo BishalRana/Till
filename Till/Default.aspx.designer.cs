@@ -15,6 +15,8 @@ namespace Till {
 		
 		protected System.Web.UI.HtmlControls.HtmlForm form1;
 		
+		protected System.Web.UI.HtmlControls.HtmlImage serviceImg;
+		
 		protected System.Web.UI.WebControls.Label ServiceType;
 		
 		protected System.Web.UI.WebControls.Label ttlLbl;
@@ -32,6 +34,12 @@ namespace Till {
 		protected System.Web.UI.WebControls.Label lblPrice;
 		
 		protected System.Web.UI.WebControls.Label lblAmount;
+		
+		protected System.Web.UI.WebControls.Button AddButton;
+		
+		protected System.Web.UI.WebControls.Button RemoveButton;
+		
+		protected System.Web.UI.WebControls.Button Info;
 		
 		protected System.Web.UI.WebControls.DropDownList BentoList;
 		

@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<foodInfo>
+    <item Type="ChickenCurry">
+        <name>Chicken Curry Bento</name>
+        <description>Chicken Curry is much thicker and full of flavour,less spicy which is suitable for children too.</description>
+        <image>https://wasabi.uk.com/marksandspencer/wp-content/uploads/2017/10/Chicken-Curry-Bento.jpg</image>
+        <ingredients>Chicken, onions, ginger, garlic, chili peppers (turmeric, cumin, coriander, garam masala)</ingredients>
+    </item>
+    <item Type="ChickenTeriyaki">
+        <name>Chicken Teriyaki Bento</name>
+        <description>
+            Juicy and tender chicken glazed in a flavorful homemade sauce, this classic Chicken Teriyaki prepared in the authentic Japanese cooking method.
+            or brushed with the glaze until it has a nice and delicious luster. The two most popular dishes in Japan using this cooking technique are Chicken Teriyaki and Buri no Teriyaki (Hamachi/Yellowtail Teriyaki).
+            Teriyaki is a name of a cooking method, not a name of a sauce.
+        </description>
+        <image>https://media-cdn.tripadvisor.com/media/photo-s/0a/fe/e5/f5/chicken-teriyaki-and.jpg</image>
+        <ingredients>Soy sauce, hoisin sauce, honey, mirin, rice wine vinegar,garlic,green beans,enoki mushrooms,sesame seeds</ingredients>
+    </item>
+     <item Type="CurrySauce">         <name>Curry Sauce Bento</name>         <description>             Curry Sauce is a delicacy that is enjoyed all around the world.It is a flavorful sauce that is most commonly served with rice, Japanese noodles, 
+            or bread.          </description>         <image>https://pogogi.com/sites/default/files/japanesefoodimages/2015/11/167%20japanese%20curry%20with%20rice%20in%20bowl.jpg</image>         <ingredients>Stewing curry powder,flour, oil,potatoes, onions(or negi onions), and carrots </ingredients>     </item>
+    <item Type="SpicyChicken">
+        <name>Spicy Chicken Bento</name>
+        <description>
+            Juicy and tender chicken glazed in a flavorful homemade sauce, this classic Chicken Teriyaki prepared in the authentic Japanese cooking method.
+            or brushed with the glaze until it has a nice and delicious luster. The two most popular dishes in Japan using this cooking technique are Chicken Teriyaki and Buri no Teriyaki (Hamachi/Yellowtail Teriyaki).
+            Teriyaki is a name of a cooking method, not a name of a sauce.
+        </description>
+        <image>https://t1.daumcdn.net/cfile/tistory/217CE53D58DA191C35</image>
+        <ingredients>Sushi rice, soy sauce, hoisin sauce, honey, mirin, rice wine vinegar,garlic,green beans,enoki mushrooms,sesame seeds</ingredients>
+    </item>
+    <item Type="PorkBulgogi">         <name>Pork Bulgogi Bento</name>         <description>             Pork bulgogi is the marinade itself and spicy,savory,sweet,gingery in taste.         </description>         <image>https://i.pinimg.com/originals/66/30/e0/6630e03ee0269738154d2be4fdc72b15.jpg</image>         <ingredients>pork,garlic gloves,soy sauce,red pepper,ginger,ground pepper </ingredients>     </item>
+    <item Type="ChumakiSet">         <name>Chumaki Set</name>         <description>             Sushi is a Japanese dish of specially prepared vinegared rice, usually with some sugar and salt, combined with a variety of ingredients, 
+            such as seafood, vegetables, and occasionally tropical fruits. Chumaki is a sushi set and each set comes with soya sauce and wasabi.         </description>         <image>https://www.wasabi.uk.com/sites/default/files/styles/food_item_image/public/chumaki-set_0_0.jpg?itok=3ovnakSd</image>         <ingredients>salmon,avocado,masago,prawn tempura,egg,surimi crabmeat </ingredients>     </item>
+    <item Type="HarmonySet">         <name>Harmony Set</name>         <description>             Sushi is a Japanese dish of specially prepared vinegared rice, usually with some sugar and salt, combined with a variety of ingredients, 
+            such as seafood, vegetables, and occasionally tropical fruits.Harmony is s sushi set with combination of chumaki,gunkan ,hosomako and 
+            nigiri.Each set comes with soy sauce and wasabi.         </description>         <image>https://www.wasabi.uk.com/sites/default/files/styles/food_item_image/public/harmony-set_0_0.jpg?itok=hDMV6zXZ</image>         <ingredients>salmon,avocado,massago,prawn tempura,egg,surimi crabmeat,cucumber </ingredients>     </item>
+    <item Type="MixedMakiSet">         <name>Mixed Maki Set</name>         <description>             Sushi is a Japanese dish of specially prepared vinegared rice, usually with some sugar and salt, combined with a variety of ingredients, 
+            such as seafood, vegetables, and occasionally tropical fruits.Mixed maki is a sushi set with combination of chumaki and hosomaki,
+            each set comes with soy sauce and wasabi.         </description>         <image>https://www.wasabi.uk.com/sites/default/files/styles/food_item_image/public/mini-maki-set_0.jpg?itok=gHihcdfi</image>         <ingredients>salmon,avocado,masago,prawn tempura,surimi crabmeat,cucumber,egg </ingredients>     </item>
+    <item Type="RainBowSet">         <name>Rainbow Set</name>         <description>             Sushi is a Japanese dish of specially prepared vinegared rice, usually with some sugar and salt, combined with a variety of ingredients, 
+            such as seafood, vegetables, and occasionally tropical fruits.Rainbow is a sushi set with combination of chumaki,nigiri,sashimi and salad,
+            each set comes with soy sauce and wasabi.         </description>         <image>https://www.wasabi.uk.com/sites/default/files/styles/food_item_image/public/rainbow-set_0_0.jpg?itok=GZ1ZZsT_</image>         <ingredients>salmon,avocado,masago,prawn tempura,egg,surimi crabmeat,seafood stick,tuna,shrimp,mixed leaves,chives </ingredients>     </item>
+    <item Type="Coke">         <name>Coke</name>         <description>             Coca-Cola, or Coke is a carbonated soft drink manufactured by The Coca-Cola Company. Originally intended as a patent medicine, it was invented 
+            in the late 19th century by John Pemberton and was bought out by businessman Asa Griggs Candler, whose marketing tactics led Coca-Cola to its
+            dominance of the world soft-drink market throughout the 20th century.         </description>         <image>https://jlbrooks.co.uk/media/catalog/product/cache/1/image/800x800/9df78eab33525d08d6e5fb8d27136e95/d/-/d-coke-500.jpg</image>         <ingredients> Carbonated water,Sugar (sucrose or high-fructose corn syrup (HFCS) depending on country of origin),Caffeine,Phosphoric acid,Caramel color,Natural flavorings </ingredients>     </item>
+    <item Type="ZeroCoke">         <name>Zero Coke</name>         <description>             Coke Zero Sugar, is a diet cola produced by The Coca-Cola Company.         </description>         <image>https://4.imimg.com/data4/LV/AR/MY-30522162/coke-zero-bottle-600-ml-500x500.jpg</image>         <ingredients>Water, Colour (Caramel E150d), Phosphoric Acid, Sweeteners (Aspartame, Acesulfame K), Natural Flavourings Including Caffeine,
+        Acidity Regulator (Sodium Citrate). Contains a Source of Phenylalanine</ingredients>     </item>     <item Type="Fanta">         <name>Fanta </name>         <description>             Fanta is a brand of fruit-flavored carbonated drinks created by The Coca-Cola Company and marketed globally. There are more than 100 flavours worldwide.         </description>         <image>https://www.britishcornershop.co.uk/img/large/SGN0316.jpg</image>         <ingredients>Carbonated Water, Sugar, Orange Juice from Concentrate (3.7%), Citrus Fruit from Concentrate (1.3%), Citric Acid, Vegetable Extracts 
+        (Carrot, Pumpkin), Sweeteners (Acesulfame K, Sucralose), Preservative (Potassium Sorbate), Malic Acid, Acidity Regulator (Sodium Citrate), Stabiliser 
+        (Guar Gum), Natural Orange Flavourings with Other Natural Flavourings, Antioxidant (Ascorbic Acid). </ingredients>     </item>
+    <item Type="StillWater">         <name>Still Water</name>         <description>             Naturally pure: evian water is delicately crafted by nature over a 15 year journey through the French Alps, for a unique balance of minerals.
+         </description>         <image>https://cdn.thomasridley.co.uk/pub/media/catalog/product/cache/4504122c228d4b8db4d9e9cb7aac45db/0/0/00739_2.jpg</image>         <ingredients>Natural mineral water </ingredients>     </item>
+</foodInfo>
