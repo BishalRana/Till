@@ -35,7 +35,7 @@ namespace Till.InvoiceFactory
                     case BentoEnum.SpicyChicken:
                         bentoType = new SpicyChickenInvoice();
                         break;
-                    case BentoEnum.PorkBulagi:
+                    case BentoEnum.PorkBulgogi:
                         bentoType = new PorkBulagiInvoice();
                         break;
                     default:
